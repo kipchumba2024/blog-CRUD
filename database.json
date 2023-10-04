@@ -1,0 +1,16 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Phase 1 Project",
+      "description": "For this challenge, you will be working on Flatacuties, an app where you can vote for the cutest animal! You will be using a local API and building out the frontend for our app, Flatacuties.",
+      "image": "https://plus.unsplash.com/premium_photo-1669248390922-1a7999ec82a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+      "id": 2,
+      "title": "Flatacuties",
+      "description": "For this challenge, you will be working on Flatacuties, an app where you can vote for the cutest animal! You will be using a local API and building out the frontend for our app, Flatacuties.",
+      "image": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    }
+  ]
+}

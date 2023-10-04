@@ -1,0 +1,55 @@
+body{
+    width: 70%;
+    margin: auto;
+}
+
+#container
+{
+    display: flex;
+    flex-direction: row;
+    gap:4px;
+}
+
+#container #all_blogs
+{
+    display: flex;
+    padding: 4px;
+    width: 60%;
+    background-color: rgb(104, 184, 255);
+}
+#card{
+    height: 40vh;
+    
+    width: 50%;
+    border: 2px solid rgb(255, 227, 227);
+}
+#card img{
+    height:26vh ;
+    width: 100%;
+    height: 3;
+}
+#card img:hover{
+  cursor: pointer;
+}
+#container #single_blog
+{
+    width: 40%;
+    background-color: aqua;
+
+}
+
+#single_blog img{
+    width: 100%;
+}
+
+#deleteBtn
+{
+    display: block;
+    background-color: red;
+    border: none;
+    color: white;
+
+}
+#deleteBtn:hover{
+    cursor: pointer;
+}
