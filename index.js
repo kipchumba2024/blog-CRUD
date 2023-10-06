@@ -7,14 +7,15 @@ fetch("http://localhost:3000/blogs", {
     console.log(data);
     const all_blogs = document.getElementById("all_blogs")
     
-    data.map((element)=>{
+    for(element of data){
        all_blogs.innerHTML += `<div  id="card">
          <img onclick="displaySingleBlog(${element.id})" src="${element.image}"
          <h6>${element.title}</h6>
          <button onclick="deleteBlog(${element.id})" id="deleteBtn">Delete</button>
-       </div>`
+         <button onclick="edit(${element.id})" >Edit</button>
+         </div>`
 
-    })
+    }
 
 
 })
@@ -28,7 +29,7 @@ function displaySingleBlog(id)
     })
     .then((response)=> response.json())
     .then((data)=> {
-        const single_blog= document.getElementById("single_blog")
+        const single_blog = document.getElementById("single_blog")
         single_blog.innerHTML = `<div>
         <img src="${data.image}"
         <h6>${data.title}</h6>
@@ -80,3 +81,48 @@ addForm.addEventListener("submit", function(event){
 
     console.log(title, " ", description, " ", image_url)
 })
+
+// edit function
+function edit(id){
+    fetch(`http://localhost:3000/blogs/${id}`)
+    .then((response)=> response.json())
+    .then((res)=> {
+        console.log(res);
+        const updateContainer = document.getElementById("updateContainer")
+        updateContainer.innerHTML=`
+        <h6>Update Form</h6>
+        <div>
+            <input type="text" id="update_title" value="${res.title}" placeholder="Enter Title">
+            <input type="text" id="update_description" value="${res.description}" placeholder="Enter description">
+            <input type="text" id="update_image_url" value="${res.image}" placeholder="Enter image url">
+            <button onclick="update(${id})" type="submit">Update</button>
+        </div>
+        `
+    })
+
+}
+
+
+function update(id){
+    const update_title = document.getElementById("update_title").value;
+    const update_description = document.getElementById("update_description").value;
+    const update_image_url = document.getElementById("update_image_url").value;
+    
+    fetch(`http://localhost:3000/blogs/${id}`, {
+        method:"PATCH",
+        body: JSON.stringify({
+            title: update_title,
+            image: update_image_url,
+            description: update_description
+        }),
+        headers: {
+            "Content-Type": "application/json",
+        }
+        })
+        .then((response)=> response.json())
+        .then((data)=> {
+            alert("Blog Updated")
+        })
+    console.log(update_title)
+
+}
