@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/blogs", {
+fetch("https://xxx-w495.onrender.com/blogs", {
     method:"GET"
 })
 .then((response)=> response.json())
@@ -24,7 +24,7 @@ fetch("http://localhost:3000/blogs", {
 // display single blog
 function displaySingleBlog(id)
 {
-    fetch(`http://localhost:3000/blogs/${id}`, {
+    fetch(`https://xxx-w495.onrender.com/blogs/${id}`, {
     method:"GET"
     })
     .then((response)=> response.json())
@@ -44,7 +44,7 @@ function displaySingleBlog(id)
 // delete single blog
 function deleteBlog(id)
 {
-    fetch(`http://localhost:3000/blogs/${id}`, {
+    fetch(`https://xxx-w495.onrender.com/blogs/${id}`, {
     method:"DELETE"
     })
     .then((response)=> response.json())
@@ -62,7 +62,7 @@ addForm.addEventListener("submit", function(event){
     const description = document.getElementById("description").value;
     const image_url = document.getElementById("image_url").value;
 
-    fetch(`http://localhost:3000/blogs`, {
+    fetch(`https://xxx-w495.onrender.com/blogs`, {
         method:"POST",
         body: JSON.stringify({
             title: title,
@@ -84,7 +84,7 @@ addForm.addEventListener("submit", function(event){
 
 // edit function
 function edit(id){
-    fetch(`http://localhost:3000/blogs/${id}`)
+    fetch(`https://xxx-w495.onrender.com/blogs/${id}`)
     .then((response)=> response.json())
     .then((res)=> {
         console.log(res);
@@ -108,7 +108,7 @@ function update(id){
     const update_description = document.getElementById("update_description").value;
     const update_image_url = document.getElementById("update_image_url").value;
     
-    fetch(`http://localhost:3000/blogs/${id}`, {
+    fetch(`https://xxx-w495.onrender.com/blogs/${id}`, {
         method:"PATCH",
         body: JSON.stringify({
             title: update_title,
